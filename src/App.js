@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
+import { Jumbotron, Card, CardImg, Form, FormGroup, Input, Label, Button, Dropdown, DropdownMenu } from 'reactstrap'
 
 const todo = [
   {
@@ -16,17 +17,17 @@ const todo = [
   },
   {
     task: 'Clean House',
-    id: 1528817084358,
+    id: 1528817084359,
     completed: false
   },
   {
     task: 'Wash Car',
-    id: 1528817084358,
+    id: 1528817084360,
     completed: false
   },
   {
     task: 'Wash Laundry',
-    id: 1528817084358,
+    id: 1528817084361,
     completed: false
   }
 ];
@@ -37,7 +38,7 @@ class App extends React.Component {
     super();
     this.state ={
       name: "Janneth",
-       todo:todo
+       todo
     };
   }
   // you will need a place to store your state in this component.
@@ -64,7 +65,7 @@ toggleItem = itemId => {
         return {
           ...item,
           completed: !item.completed
-        }
+        };
       }
       return item;
     })
@@ -85,8 +86,12 @@ toggleItem = itemId => {
         <div className ="header">
         <h1>Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todo={this.state.todo}/>
-        <TodoForm></TodoForm>
+        <Card style={{ backgroundColor: '#e74c3d' }}>
+        <TodoList todo={this.state.todo}
+         toggleItem={this.toggleItem}
+         clearCompleted={this.clearCompleted}/>
+        <TodoForm addTodo={this.addTodo} />
+        </Card>
         </div>
       </div>
     );
