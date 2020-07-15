@@ -86,12 +86,12 @@ toggleItem = itemId => {
         <div className ="header">
         <h1>Hello {this.state.name}</h1>
         <h2>Welcome to your Todo App!</h2>
-        <Card style={{ backgroundColor: '#e74c3d' }}>
+        {/* <Card style={{ backgroundColor: '#e74c3d' }}> */}
         <TodoList todo={this.state.todo}
          toggleItem={this.toggleItem}
          clearCompleted={this.clearCompleted}/>
         <TodoForm addTodo={this.addTodo} />
-        </Card>
+        
         </div>
       </div>
     );
